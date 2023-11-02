@@ -12,6 +12,7 @@ const Verify = () => {
       let tmp1 = mailUrl.split("oobCode=")[1];
       let tmp2 = tmp1.split("&apiKey=")[0];
        console.log(tmp2)
+       console.log(tmp1)
       const resp = await axios.post(
         "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCk_J2sA7fJF5u5d8b1U5C8nK0VgGaCMB4",
         {
