@@ -4,6 +4,8 @@ import SignUp from "./pages/signUp/SignUp";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import "./App.css";
+import ForgotPassword from "./pages/signUp/ForgotPassword";
+import Verify from "./pages/signUp/Verify";
 
 function App() {
   const isAuth = useSelector((state) => state.auth.isLoggedIn);
@@ -15,6 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<SignUp />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/verify" element={<Verify />} />
         </Routes>
       </BrowserRouter>
     </div>

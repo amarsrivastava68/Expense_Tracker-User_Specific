@@ -50,18 +50,18 @@ const SignUp = () => {
 
             if (!isUser) {
               const mailVerify = await axios.post(
-                'https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyBUKWtuc6mChahG1mskYlsoKXzaEc-y9ME',
+                'https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyCk_J2sA7fJF5u5d8b1U5C8nK0VgGaCMB4',
                 {
                   requestType: 'VERIFY_EMAIL',
                   idToken: data.idToken,
                 }
               )
-              // console.log(mailVerify)
+              console.log(mailVerify)
               if (mailVerify.status === 200) {
-                navigate('/verify')
+                navigate('/verify', { replace: true });
               }
             } else {
-              navigate('/welcome')
+              navigate('/welcome', { replace: true });
             }
             setEmail('')
             setPassword('')
