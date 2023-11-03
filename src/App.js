@@ -8,6 +8,7 @@ import Verify from "./pages/signUp/Verify";
 import Welcome from "./pages/Welcome";
 import UpdateProfile from "./pages/UpdateProfile";
 import Header from "./components/Header/Header";
+import ExpensePage from "./pages/ExpensePage/ExpensePage";
 function App() {
   
   const isAuth = useSelector((state) => state.auth.isLoggedIn)
@@ -31,6 +32,7 @@ function App() {
           <Route path="/verify" element={<Verify />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/updateProfile" element={<UpdateProfile />} />
+          <Route path="/expenses" element={<ExpensePage />} />
         </Routes>
       </BrowserRouter>
     </div>
