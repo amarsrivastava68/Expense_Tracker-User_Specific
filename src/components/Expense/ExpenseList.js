@@ -5,10 +5,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { expenseActions } from '../../store/expenseSlice'
 
+
 const ExpenseList = () => {
   const dispatch = useDispatch()
   const expenses = useSelector((state) => state.expense.expenses)
-
+  const loggedemail = useSelector((state) => state.auth.email)
+  
+  const filteredExpenses = expenses.filter((item) => item.email === loggedemail)
+  console.log(filteredExpenses)
   useEffect(() => {
     async function fetchHandler() {
       const res = await axios.get(
@@ -17,11 +21,12 @@ const ExpenseList = () => {
       if (res.status === 200) {
         console.log(res)
         const data = res.data
-
+console.log(data)
         const loadArray = []
         for (const key in data) {
           const parsedData = JSON.parse(data[key].body)
-          // console.log(parsedData)
+          console.log('parseddata ' , parsedData)
+        
           loadArray.unshift({
             id: key,
             money: parsedData.money,
@@ -81,7 +86,7 @@ const ExpenseList = () => {
       )}
 
       <ul className={classes.list}>
-        {expenses.map((each) => {
+        {filteredExpenses.map((each) => {
           return(<>
             <p>{each.id}</p>
             <p>{each.description}</p>

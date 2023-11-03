@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const localData = localStorage.getItem('details')
 const details = JSON.parse(localData)
+
 let x, y, logged
 if (details) {
   x = details.token
@@ -19,6 +20,7 @@ const initialAuthState = {
 }
 
 const authSlice = createSlice({
+  
   name: 'authentication',
   initialState: initialAuthState,
   reducers: {
@@ -28,6 +30,7 @@ const authSlice = createSlice({
       state.email = action.payload.email
     },
     logout(state) {
+      
       localStorage.clear()
       state.isLoggedIn = false
       state.token = null
