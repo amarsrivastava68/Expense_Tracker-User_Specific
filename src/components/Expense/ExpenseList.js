@@ -4,7 +4,7 @@ import classes from './ExpenseList.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { expenseActions } from '../../store/expenseSlice'
-
+import SingleExpense from './SingleExpense'
 
 const ExpenseList = () => {
   const dispatch = useDispatch()
@@ -74,6 +74,8 @@ console.log(data)
 
   return (
     <div className={classes.mainList}>
+
+<h2>Expenses List for the account : - {loggedemail} </h2>
       <div>
         <a id='a2' download='file2.csv'>
           <button onClick={csvDataDownloader} className={classes.btnc}>
@@ -86,15 +88,8 @@ console.log(data)
       )}
 
       <ul className={classes.list}>
-        {filteredExpenses.map((each) => {
-          return(<>
-            <p>{each.id}</p>
-            <p>{each.description}</p>
-            <p>{each.money}</p>
-            <p>{each.category}</p>
-            
-            </>
-          )
+      {filteredExpenses.map((each) => {
+          return <SingleExpense key={each.id} item={each} />
         })}
       </ul>
     </div>

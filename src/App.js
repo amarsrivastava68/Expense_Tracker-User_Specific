@@ -1,6 +1,4 @@
 import { useSelector } from "react-redux";
-//import Header from './components/Header/Header'
-import SignUp from "./pages/signUp/SignUp";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import ForgotPassword from "./pages/signUp/ForgotPassword";
@@ -9,30 +7,42 @@ import Welcome from "./pages/Welcome";
 import UpdateProfile from "./pages/UpdateProfile";
 import Header from "./components/Header/Header";
 import ExpensePage from "./pages/ExpensePage/ExpensePage";
+import EditExpense from "./pages/ExpensePage/EditExpense";
+import SignUp from "./pages/signUp/SignUp";
+
 function App() {
-  
-  const isAuth = useSelector((state) => state.auth.isLoggedIn)
-  const { isDarkTheme } = useSelector((state) => state.theme)
+  const isAuth = useSelector((state) => state.auth.isLoggedIn);
+  const { isDarkTheme } = useSelector((state) => state.theme);
 
   document.body.style = isDarkTheme
-    ? 'background: rgb(95, 91, 91);'
-    : 'background: ;'
+    ? "background: rgb(95, 91, 91);"
+    : "background: ;";
 
   return (
-    //testing
     <div>
-     
       <BrowserRouter>
-      <Header/>
+        <Header />
         <Routes>
-        
-          <Route path="/"  exact element={<Navigate to="/login" />} />
+          <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<SignUp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/verify" element={<Verify />} />
-          <Route path="/welcome" element={<Welcome />} />
-          <Route path="/updateProfile" element={<UpdateProfile />} />
-          <Route path="/expenses" element={<ExpensePage />} />
+          <Route
+            path="/welcome"
+            element={isAuth ? <Welcome /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/updateProfile"
+            element={isAuth ? <UpdateProfile /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/expenses"
+            element={isAuth ? <ExpensePage /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/edit-expense"
+            element={isAuth ? <EditExpense /> : <Navigate to="/login" />}
+          />
         </Routes>
       </BrowserRouter>
     </div>
