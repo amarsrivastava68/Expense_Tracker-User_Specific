@@ -92,3 +92,28 @@
     width: 60%;
     margin: 0 1rem 0;
   }
+
+  /* Your existing styles for desktop */
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .inputDetails {
+    flex-direction: column; /* Stack fields vertically on mobile */
+    align-items: flex-start; /* Adjust alignment for mobile */
+  }
+
+  .in {
+    width: 90%; /* Full width on mobile */
+  }
+
+  .in label {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .in input {
+    margin: 0;
+    width: 80%; /* Full width on mobile */
+    margin: 0.5rem 0; /* Add some spacing between fields on mobile */
+  }
+}

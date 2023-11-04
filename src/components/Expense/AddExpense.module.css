@@ -84,3 +84,40 @@
     font-size: 1rem;
     border-radius: 0.3rem;
   }
+
+
+  @media (max-width: 767px) {
+    .form {
+      width: 80%;
+      padding: 1rem;
+    }
+  
+    .formInside {
+      width: 100%;
+    }
+  
+    .enterVal input {
+      width: 90%;
+    }
+  
+    .formInside button {
+      width: 90%;
+    }
+  
+    .dropdown select {
+      width: 70%;
+    }
+  
+    .formInside h2 {
+      font-size: 1.5rem;
+    }
+  
+    .enterVal input {
+      font-size: 0.9rem;
+    }
+  
+    .formInside button {
+      font-size: 0.9rem;
+    }
+  }
+  

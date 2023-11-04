@@ -1,76 +1,87 @@
+/* Header Container */
+.header {
+  background: rgb(208, 211, 12);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-around; /* Spacing between buttons on desktop */
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Navigation List */
+.navList {
+  list-style: none;
+  padding: 0;
+  font-weight: 800;
+  display: flex;
+  
+  gap: 1rem; /* Adjust spacing between buttons on desktop */
+}
+
+/* Navigation List Items (Buttons) */
+.navList li {
+  cursor: pointer;
+  
+}
+
+/* Active Link Style */
+.navList a.active {
+  color: rgb(241, 5, 5);
+  
+}
+
+/* Theme and Logout Buttons */
 .themeD {
-    position: absolute;
-    z-index: 20;
-    top: 1rem;
-    left: 1rem;
-    background: #383636; /* Dark background color */
-    color: white;
-    padding: 0.4rem;
-    border-radius: 8px;
-    border: none;
-    font-weight: 600;
-    font-size: 1rem;
-    text-align: center; /* Center text horizontally */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-  }
-  
-  .themeD:hover {
-    background: #161616; /* Darker background on hover */
-    cursor: pointer;
-  }
-  
+  background: #383636; /* Dark background color */
+  color: white;
+  padding: 0.4rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center; /* Center text horizontally */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.logoutButton {
+  background: #bb0a0a; /* Dark background color */
+  color: rgb(245, 14, 14);
+  padding: 0.4rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 900;
+  font-size: 0.9rem;
+  text-align: center; /* Center text horizontally */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* Hover Effect for Buttons */
+.themeD:hover, .logoutButton:hover {
+  background-color: rgb(238, 19, 11); /* Darker red on hover */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
   .header {
-    position: sticky;
-    display: flex;
-    top: 0;
-    left: 0;
-    height: 3.5rem;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background: rgb(104, 28, 28);
-    font-weight: 500;
-    margin: 0;
-    color: white;
-    border-bottom: 1px solid white;
-    z-index: 10;
-    font-size: 1.1rem;
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    text-align: center; /* Center text on mobile */
   }
-  
+
   .navList {
-    display: flex;
-    list-style: none;
-    align-items: center;
-    gap: 4.5rem;
+    flex-direction: column; /* Stack items vertically on mobile */
   }
-  .navList a {
-    text-decoration: none;
-    color: white;
-  }
-  
+
+  /* Adjust spacing for mobile */
   .navList li {
-    cursor: pointer;
+    margin: 0.5rem 0;
   }
-  
-  .navList a.active {
-    color: rgb(190, 187, 187);
-  }
-  
-  .btn {
-    margin-right: 2rem;
-    cursor: pointer;
-    /* padding: 0.5rem; */
-    width: 6rem;
-    font-size: 1.3rem;
-  }
-  
-  .navList button {
-    position: absolute;
-    z-index: 30;
-    top: 1rem;
-    right: 1rem;
-    background: #bb0a0a; /* Dark background color */
-    color: white;
+
+  /* Adjust padding and font size for mobile */
+  .themeD, .logoutButton {
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+    background: #e62006; /* Dark background color */
+    color: rgb(250, 249, 249);
     padding: 0.4rem;
     border-radius: 8px;
     border: none;
@@ -78,10 +89,5 @@
     font-size: 0.9rem;
     text-align: center; /* Center text horizontally */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-   
   }
-  
-  .navList button:hover {
-    background-color: #ff3333; /* Darker red on hover */
-  }
-  
+}

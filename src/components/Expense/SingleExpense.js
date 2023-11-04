@@ -76,7 +76,14 @@ const SingleExpense = ({ item }) => {
               {item.money}
             </p>
           </div>
-          <div>
+         
+        </div>
+        <p>
+          <span>Description : </span>
+          {item.description}
+        </p>
+        <br/>
+        <div>
             <button onClick={editHandler} className={classes.btn}>
               Edit
             </button>
@@ -84,11 +91,6 @@ const SingleExpense = ({ item }) => {
               Delete
             </button>
           </div>
-        </div>
-        <p>
-          <span>Description : </span>
-          {item.description}
-        </p>
       </li>
     </div>
     

@@ -34,10 +34,10 @@ const Header = () => {
             <li>HOME</li>
           </Link>
           <Link to='/expenses' activeClassName={classes.active}>
-            <li>Expenses</li>
+            <li>EXPENSES</li>
           </Link>
           <Link to='/updateProfile' activeClassName={classes.active}>
-            <li>Profile</li>
+            <li>PROFILE</li>
           </Link>
           {isLoggedIn && <button onClick={logoutHandler}>Logout</button>}
         </ul>
