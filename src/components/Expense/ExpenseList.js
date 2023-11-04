@@ -44,7 +44,7 @@ console.log(data)
       }
     }
     fetchHandler()
-  }, [])
+  }, [expenses])
 
   let totalAmount = 0
   if (expenses) {
