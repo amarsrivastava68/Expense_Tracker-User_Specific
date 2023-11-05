@@ -32,7 +32,7 @@ const Verify = () => {
   return (
     <div className={classes.updateDetails}>
       <h1>Verify Email</h1>
-      <p>Please check your email and enter the link which you will get</p>
+      <p>Copy the Verification Link which you got on your email and Paste Below </p>
       <label htmlFor="verifyLink">Enter URL</label>
       <input
         id="verifyLink"
